@@ -32,10 +32,10 @@ const MyProfile =({changeModalState, modalsState})=>{
     const history = useHistory();
     const [,loading] = useAuthState(auth);
     const [profSections] = useState([
-        //{sectionId: "grid",title: "grid", logo: <IoMdGrid />},
+        {sectionId: "grid",title: "grid", logo: <IoMdGrid />},
         {sectionId: "stacked",title: "stacked", logo: <RiLayoutRowLine/>},
-        //{sectionId: "reels", title: "reels", logo: <MdOndemandVideo />},
-        //{sectionId: "saved", title: "saved", logo: <VscBookmark />},
+        {sectionId: "reels", title: "videos", logo: <MdOndemandVideo />},
+        {sectionId: "saved", title: "saved", logo: <VscBookmark />},
     ]);
     const [reelsList, setReelsList] = useState([]);
     const { receivedData, authLogout, usersProfileData, changeMainState, uid, currentPostIndex, updateReelsProfile, activeProfileSection, testStorageConnection } = useContext(AppContext);

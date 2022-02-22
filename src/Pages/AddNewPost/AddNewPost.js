@@ -28,9 +28,9 @@ class AddNewPost extends PureComponent {
       contentPreview: "",
       postMethodOptions: {
         post: {value: Consts.Post, title: "post"},
-        //reel: {value: Consts.Reel, title: "video"},
+        reel: {value: Consts.Reel, title: "video"},
         tweet: {value: Consts.Tweet, title: "quote"},
-        //poll: {value: Consts.Poll, title: "poll question"},
+        poll: {value: Consts.Poll, title: "poll question"},
         youtube: {value: Consts.YoutubeVid, title: "youTube video"}
       }
     };

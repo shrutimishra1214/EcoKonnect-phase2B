@@ -59,12 +59,7 @@ class EditProfile extends PureComponent {
                         index={i}
                       />
                     ))}
-                  <div className="left--bottom--side flex-column">
-                    <img loading="lazy" className="unselectable" src={fbimg} alt="fb" />
-                    <span className="change__prof__pic mt-3">
-                      Accounts Center
-                    </span>
-                  </div>
+                  
                 </ul>
                 {/* end left side */}
                 <Suspense fallback={<div><div className="global__loading"><span className="global__loading__inner"></span></div></div>}>
