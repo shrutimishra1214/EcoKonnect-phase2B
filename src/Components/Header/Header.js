@@ -4,14 +4,14 @@ import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
 import { ImHome } from "react-icons/im";
 import { FaHeart, FaFacebookMessenger } from "react-icons/fa";
-import {IoNotificationsCircleSharp} from "react-icons/io";
+import { MdCircleNotifications } from "react-icons/md";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { Avatar } from "@material-ui/core";
 import { auth } from "../../Config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BiPowerOff, BiCog, BiInfoCircle } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
-import { RiBookmarkLine } from "react-icons/ri";
+import { RiBookmarkLine, RiChatSmile3Fill } from "react-icons/ri";
 import {CgCalculator} from "react-icons/cg";
 import Notifications from "./Notifications/Notifications";
 import { withRouter } from "react-router-dom";
@@ -19,9 +19,10 @@ import Loader from "react-loader-spinner";
 import LoadingScreen from "../../Components/Generic/LoadingScreen/LoadingScreen";
 import HeaderLogoLight from "../../Assets/logo.png";
 import HeaderLogoDark from "../../Assets/logo.png";
-import { IoIosCompass } from "react-icons/io";
+import { IoIosCompass, IoMdNotifications } from "react-icons/io";
 import DeskTopSearch from "../../Components/DesktopSearch/DesktopSearch";
 import { retry } from "../../Utilities/RetryImport";
+import { TiGroup } from "react-icons/ti";
 const OptionsModal = lazy(() => retry(() => import("../../Components/Generic/OptionsModal/OptionsModal")));
 
 const Header = (props) => {
@@ -197,14 +198,14 @@ const Header = (props) => {
               </li>
               {user ? (
                 <>
-                  {/*<li className="like__icon__item" title="Messages">
+                  <li className="like__icon__item" title="Messages">
                     <NavLink
                       onClick={() => reverseNotiState("isNewMsg")}
                       to="/messages"
                       activeClassName={!openNoti ? "active-nav-link" : ""}
                       tabIndex="0"
                     >
-                      <FaFacebookMessenger aria-label="Messages"/>
+                      <RiChatSmile3Fill aria-label="Messages"/>
                       {receivedData?.notifications?.isNewMsg &&
                         location.pathname !== "/messages" ? (
                           <div className="like__noti__dot mt-1"></div>
@@ -217,10 +218,10 @@ const Header = (props) => {
                       activeClassName={!openNoti ? "active-nav-link" : ""}
                       tabIndex="0"
                     >
-                      <IoIosCompass className="compass__explore__icon" aria-label="Find People"/>
+                      <TiGroup className="compass__explore__icon" aria-label="Find People"/>
 
                     </NavLink>
-                        </li>*/}
+                        </li>
                   <li title="Add New">
                     <NavLink
                       to="/add-post"
@@ -230,7 +231,7 @@ const Header = (props) => {
                       <BsFillPlusCircleFill aria-label="Add New"/>
                     </NavLink>
                   </li>
-                  {/*<li
+                  <li
                     id="notifications"
                     title="Notifications"
                     className="noti--parent--container"
@@ -240,7 +241,7 @@ const Header = (props) => {
                     }}
                   >
                     <span className="like__icon__item">
-                      <IoNotificationsCircleSharp
+                      <IoMdNotifications
                         style={{ color: openNoti ? "#29ab87" : "var(--main-black)" }}
                       />
                       {receivedData?.notifications?.isUpdate &&
@@ -263,7 +264,7 @@ const Header = (props) => {
                       </div>
                       <div className="noti__transparent"></div>
                     </div>
-                    </li>*/}
+                    </li>
                   <li >
                     <span title={receivedData?.userName} onClick={() => setProf(true)}>
                       <Avatar
@@ -310,7 +311,7 @@ const Header = (props) => {
                               </span>
                             </li>
                           </Link>
-                          {/*<Link
+                          <Link
                             onClick={() => { changeMainState("activeProfileSection", { activeIndex: 3, activeID: "saved" }); setProf(false) }}
                             to="/profile"
                           >
@@ -319,7 +320,7 @@ const Header = (props) => {
                                 <RiBookmarkLine className="prof__popup" /> <span>Saved</span>
                               </span>
                             </li>
-                            </Link>*/}
+                            </Link>
                            
                           <Link
                             onClick={() => setProf(false)}

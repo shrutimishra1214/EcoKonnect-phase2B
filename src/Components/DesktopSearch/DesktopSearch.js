@@ -144,7 +144,7 @@ const DesktopSearch = ({ controlSearchBox, openSearchBox }) => {
           onClick={() => setVoiceBox(true)}
           className="clear--search--box voice__search__icon"
         >
-             {/* <BsMicFill /> */}
+              <BsMicFill />
             </span>}
 
         <div
