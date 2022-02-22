@@ -2629,7 +2629,7 @@ a.prof__btn__unfollowed{
 #usersProfile.users--profile--container .users--profile--posts{
     -webkit-display: grid;
     display:grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap:25px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
